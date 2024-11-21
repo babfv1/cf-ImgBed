@@ -77,14 +77,14 @@ export async function onRequestPost(context) {  // Contents of context object
     const urlParamUploadChannel = url.searchParams.get('uploadChannel');
     let uploadChannel = 'TelegramNew';
     switch (urlParamUploadChannel) {
-        case 'telegram':
-            uploadChannel = 'TelegramNew';
-            break;
         case 'cfr2':
             uploadChannel = 'CloudflareR2';
             break;
-        default:
+        case 'telegram':
             uploadChannel = 'TelegramNew';
+            break;
+        default:
+            uploadChannel = 'CloudflareR2';
             break;
     }
 
